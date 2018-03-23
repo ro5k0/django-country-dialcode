@@ -31,8 +31,8 @@ class Country(Model):
         verbose_name = _("country")
         verbose_name_plural = _("countries")
 
-    def __unicode__(self):
-        return "%s" % (self.countrycode)
+    def __str__(self):
+        return self.countrycode
 
 
 class Prefix(Model):
@@ -60,8 +60,8 @@ class Prefix(Model):
         verbose_name_plural = _("prefixes")
         ordering = ["prefix"]
 
-    def __unicode__(self):
-        return "%d" % (self.prefix)
+    def __str__(self):
+        return "{0} {1}".format(self.country_id.countryname, self.prefix)
 
     def country_name(self):
         """
