@@ -8,7 +8,7 @@ import re
 
 
 def read(*parts):
-    return open(os.path.join(os.path.dirname(__file__), *parts)).read()
+    return open(os.path.join(os.path.dirname(__file__), *parts, encoding="utf-8")).read()
 
 
 def parse_requirements(file_name):
